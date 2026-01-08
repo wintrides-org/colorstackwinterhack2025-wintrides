@@ -69,8 +69,8 @@ export default function RegisterPage() {
       next.email = "Please enter a valid email address";
     } else {
       const domain = email.split("@")[1]?.toLowerCase();
-      if (!domain?.endsWith(".edu") && !domain?.endsWith(".ac.uk") && !domain?.endsWith(".edu.au")) {
-        next.email = "Email must be from a valid campus domain (.edu, .ac.uk, .edu.au)";   /// handlesregistration for US, UK and Australian universities
+      if (!domain?.endsWith(".edu")) {
+        next.email = "Email must be from a valid campus domain (.edu)";   
       }
     }
 
@@ -232,7 +232,7 @@ export default function RegisterPage() {
             <p className="text-sm text-red-600">{errors.email}</p>
           ) : (
             <p className="text-xs text-neutral-500">
-              Must be a .edu, .ac.uk, or .edu.au email address
+              Must be a .edu email address 
             </p>
           )}
         </div>
@@ -376,7 +376,7 @@ export default function RegisterPage() {
         {/* Sign In Link */}
         <p className="mt-4 text-center text-sm text-neutral-600">
           Already have an account?{" "}
-          <Link href="/signin" className="font-medium text-black hover:underline">
+          <Link href="/signin" className="font-medium text-[#2f6db3] underline">
             Sign in
           </Link>
         </p>
