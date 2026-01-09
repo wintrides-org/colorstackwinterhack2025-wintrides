@@ -1,61 +1,18 @@
-import { Suspense } from "react";
-import VerifyEmailClient from "./VerifyEmailClient";
-
-export default function VerifyEmailPage() {
-  return (
-    <Suspense fallback={<div className="p-6">Loading...</div>}>
-      <VerifyEmailClient />
-    </Suspense>
-  );
-}
-
-/*
-Original implementation kept for easy rollback.
-
-/**
- * Email Verification Page
- *
- * Handles email verification via verification token
- *
- * FLOW:
- * 1. User clicks verification link from email (contains token)
- * 2. Page extracts token from URL query parameter
- * 3. Automatically calls verification API
- * 4. Shows success/error state
- * 5. Redirects to sign in page on success
- *
- * STATES:
- * - loading: Verifying token
- * - success: Email verified successfully
- * - error: Invalid/expired token
- * - pending: No token provided, waiting for email
- *
- * MVP:
- *   - Token in URL query parameter
- *   - Automatic verification on page load
- *
- * Production:
- *   - Consider using POST instead of GET for security
- *   - Add CSRF protection
- *   - Better error messages
- *   - Resend verification email option
- *   - Token expiration handling
- */
-
-/** 
 "use client";
 
 import { useEffect, useRef, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 
-export default function VerifyEmailPage() {
+export default function VerifyEmailClient() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const token = searchParams.get("token");
   const email = searchParams.get("email");
 
-  const [status, setStatus] = useState<"loading" | "success" | "error" | "pending">("loading");
+  const [status, setStatus] = useState<"loading" | "success" | "error" | "pending">(
+    "loading"
+  );
   const [message, setMessage] = useState("");
   const [verifying, setVerifying] = useState(false);
   const lastVerifiedToken = useRef<string | null>(null);
@@ -70,7 +27,7 @@ export default function VerifyEmailPage() {
         throw new Error(data.error || "Verification failed");
       }
 
-      const data = await res.json();
+      await res.json();
       setStatus("success");
       setMessage("Email verified successfully! You can now sign in.");
 
@@ -79,7 +36,9 @@ export default function VerifyEmailPage() {
       }, 3000);
     } catch (e: any) {
       setStatus("error");
-      setMessage(e?.message || "Failed to verify email. The link may be invalid or expired.");
+      setMessage(
+        e?.message || "Failed to verify email. The link may be invalid or expired."
+      );
     } finally {
       setVerifying(false);
     }
@@ -165,4 +124,3 @@ export default function VerifyEmailPage() {
     </main>
   );
 }
-*/
