@@ -14,21 +14,23 @@ After they sign up, send a verification link to their university email. Once the
 By default, everyone is a rider. Add a simple checkbox like “I’m also available to drive” for those who want to be drivers. They can update this preference later if they want.
 Note: A user might be a rider one day and a driver another day. They toggle that role in their profile settings after they register.
 
+*dfgf*
+
 **On the backend:** 
-A1. Campus Lock
+*A1. Campus Lock*
 The first time a user registers, they verify with an institution email.
 The system maps that email domain to a campus_id.
 The user is permanently assigned to that campus_id (unless admins support transfers later).
 All messages, threads, and urgent posts are scoped to campus_id.
 A user never sees other campuses, other campus names, or cross-campus content.
 
-A2. Roles
+*A2. Roles*
 Every user is a “member” of the campus by default.
 Rider capability: always on.
 Driver capability: optional toggle (“I can drive”), with driver-specific profile fields.
 A user can be both at once, and can switch availability day-to-day.
 
-A3. Identity in chat (privacy + trust balance)
+*A3. Identity in chat (privacy + trust balance)*
 Hybrid: pseudonym publicly, real identity revealed only after a driver accepts / group confirms.
 From users perspective: 
 Sign Up (once)
