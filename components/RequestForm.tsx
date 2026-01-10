@@ -213,9 +213,10 @@ export default function RequestForm({
   }
 
   return (
-    <main className="p-6 max-w-xl">
-      <h1 className="text-2xl font-semibold">{title}</h1>
-      <p className="mt-1 text-sm text-neutral-600">{description}</p>
+    <main className="min-h-screen bg-[#f4ecdf] px-6 py-12 text-[#1e3a5f]">
+      <div className="mx-auto w-full max-w-xl">
+        <h1 className="text-3xl font-semibold text-[#0a3570]">{title}</h1>
+        <p className="mt-1 text-sm text-[#6b5f52]">{description}</p>
 
       <div className="mt-6 grid gap-4">
         <div className="grid gap-1">
@@ -225,7 +226,7 @@ export default function RequestForm({
             min={1}
             value={partySize}
             onChange={(e) => setPartySize(Number(e.target.value))}
-            className="rounded-xl border p-3"
+            className="rounded-xl border border-[#1e3a5f] bg-[#f7efe7] p-3 text-[#1e3a5f] placeholder:text-[#7b6b5b] focus:outline-none focus:ring-2 focus:ring-[#1e3a5f]/40"
           />
           {errors.partySize ? (
             <p className="text-sm text-red-600">{errors.partySize}</p>
@@ -239,7 +240,7 @@ export default function RequestForm({
               value={pickup}
               onChange={(e) => setPickup(e.target.value)}
               placeholder="Type a location (e.g., Campus Center)"
-              className="rounded-xl border p-3"
+              className="rounded-xl border border-[#1e3a5f] bg-[#f7efe7] p-3 text-[#1e3a5f] placeholder:text-[#7b6b5b] focus:outline-none focus:ring-2 focus:ring-[#1e3a5f]/40"
             />
             {errors.pickup ? (
               <p className="text-sm text-red-600">{errors.pickup}</p>
@@ -256,7 +257,7 @@ export default function RequestForm({
                 key={p}
                 type="button"
                 onClick={() => setPickup(p)}
-                className="rounded-full border px-3 py-1 text-sm hover:bg-neutral-50"
+                className="rounded-full border border-[#1e3a5f] bg-[#e7c59a] px-3 py-1 text-sm font-medium text-[#1e3a5f] shadow-[0_6px_12px_rgba(10,27,63,0.08)] transition hover:bg-[#ddb680]"
               >
                 {p}
               </button>
@@ -271,7 +272,7 @@ export default function RequestForm({
               value={pickupNotes}
               onChange={(e) => setPickupNotes(e.target.value)}
               placeholder="e.g., back entrance near the road"
-              className="rounded-xl border p-3 min-h-[84px]"
+              className="min-h-[84px] rounded-xl border border-[#1e3a5f] bg-[#f7efe7] p-3 text-[#1e3a5f] placeholder:text-[#7b6b5b] focus:outline-none focus:ring-2 focus:ring-[#1e3a5f]/40"
             />
           </div>
         </div>
@@ -283,7 +284,7 @@ export default function RequestForm({
               type="datetime-local"
               value={pickupAtInput}
               onChange={(e) => setPickupAtInput(e.target.value)}
-              className="rounded-xl border p-3"
+              className="rounded-xl border border-[#1e3a5f] bg-[#f7efe7] p-3 text-[#1e3a5f] focus:outline-none focus:ring-2 focus:ring-[#1e3a5f]/40"
             />
             {errors.pickupAt ? (
               <p className="text-sm text-red-600">{errors.pickupAt}</p>
@@ -299,7 +300,7 @@ export default function RequestForm({
               min={1}
               value={carsNeeded}
               onChange={(e) => setCarsNeeded(Number(e.target.value))}
-              className="rounded-xl border p-3"
+              className="rounded-xl border border-[#1e3a5f] bg-[#f7efe7] p-3 text-[#1e3a5f] focus:outline-none focus:ring-2 focus:ring-[#1e3a5f]/40"
             />
             {errors.carsNeeded ? (
               <p className="text-sm text-red-600">{errors.carsNeeded}</p>
@@ -313,7 +314,7 @@ export default function RequestForm({
             value={dropoff}
             onChange={(e) => setDropoff(e.target.value)}
             placeholder="Type your destination"
-            className="rounded-xl border p-3"
+            className="rounded-xl border border-[#1e3a5f] bg-[#f7efe7] p-3 text-[#1e3a5f] placeholder:text-[#7b6b5b] focus:outline-none focus:ring-2 focus:ring-[#1e3a5f]/40"
           />
           {errors.dropoff ? (
             <p className="text-sm text-red-600">{errors.dropoff}</p>
@@ -325,7 +326,7 @@ export default function RequestForm({
             type="button"
             onClick={onSubmit}
             disabled={submitting}
-            className="rounded-xl px-4 py-3 border bg-white hover:bg-neutral-50 disabled:opacity-50"
+            className="rounded-full bg-[#0a3570] px-5 py-3 text-sm font-semibold text-white shadow-[0_10px_24px_rgba(10,27,63,0.2)] transition hover:-translate-y-0.5 hover:bg-[#0a2d5c] disabled:opacity-50"
           >
             {submitting ? "Submitting..." : "Confirm & Request"}
           </button>
@@ -357,7 +358,7 @@ export default function RequestForm({
             aria-label="Close quote"
           />
 
-          <div className="absolute left-1/2 top-1/2 w-[min(560px,92vw)] -translate-x-1/2 -translate-y-1/2 rounded-2xl bg-white p-5 shadow-xl">
+          <div className="absolute left-1/2 top-1/2 w-[min(560px,92vw)] -translate-x-1/2 -translate-y-1/2 rounded-2xl bg-[#fdf9f3] p-5 text-[#1e3a5f] shadow-xl">
             <div className="flex items-start justify-between gap-4">
               <div>
                 <h2 className="text-lg font-semibold">Review your quote</h2>
@@ -420,7 +421,7 @@ export default function RequestForm({
             </div>
 
             <div className="mt-4 rounded-2xl border p-4">
-              <div className="text-sm font-medium">Estimates (MVP)</div>
+              <div className="text-sm font-medium">Estimates</div>
               <div className="mt-2 text-sm text-neutral-700">
                 Estimated wait time:{" "}
                 <span className="font-medium">
@@ -441,14 +442,14 @@ export default function RequestForm({
               <button
                 type="button"
                 onClick={onEditQuote}
-                className="rounded-xl px-4 py-2 text-sm border border-neutral-200 hover:bg-neutral-50"
+                className="rounded-full border border-[#1e3a5f] px-4 py-2 text-sm font-medium text-[#1e3a5f] transition hover:bg-[#efe3d2]"
               >
                 Edit
               </button>
               <button
                 type="button"
                 onClick={onCancelQuote}
-                className="rounded-xl px-4 py-2 text-sm border border-neutral-200 hover:bg-neutral-50"
+                className="rounded-full border border-[#1e3a5f] px-4 py-2 text-sm font-medium text-[#1e3a5f] transition hover:bg-[#efe3d2]"
               >
                 Cancel
               </button>
@@ -456,7 +457,7 @@ export default function RequestForm({
                 type="button"
                 onClick={onConfirmQuote}
                 disabled={submitting}
-                className="rounded-xl px-4 py-2 text-sm border bg-white hover:bg-neutral-50 disabled:opacity-50"
+                className="rounded-full bg-[#0a3570] px-4 py-2 text-sm font-semibold text-white shadow-[0_8px_18px_rgba(10,27,63,0.2)] transition hover:-translate-y-0.5 hover:bg-[#0a2d5c] disabled:opacity-50"
               >
                 {submitting ? "Submitting..." : "Confirm request"}
               </button>
@@ -464,6 +465,7 @@ export default function RequestForm({
           </div>
         </div>
       ) : null}
+      </div>
     </main>
   );
 }

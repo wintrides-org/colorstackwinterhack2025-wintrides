@@ -52,26 +52,27 @@ export default function CarpoolFeedPage() {
   const today = new Date().toISOString().split('T')[0];
 
   return (
-    <main className="p-6 max-w-4xl mx-auto">
-      {/* Header */}
-      <div className="flex items-center justify-between mb-6">
-        <div>
-          <h1 className="text-2xl font-semibold">Carpool Feed</h1>
-          <p className="mt-1 text-sm text-neutral-600">
-            Browse and join carpools for your upcoming trips
-          </p>
+    <main className="min-h-screen bg-[#f4ecdf] px-6 py-12 text-[#1e3a5f]">
+      <div className="mx-auto w-full max-w-4xl">
+        {/* Header */}
+        <div className="flex items-center justify-between mb-6">
+          <div>
+            <h1 className="text-3xl font-semibold text-[#0a3570]">Carpool Feed</h1>
+            <p className="mt-1 text-sm text-[#6b5f52]">
+              Browse and join carpools for your upcoming trips
+            </p>
+          </div>
+          <button
+            type="button"
+            onClick={() => router.push("/carpool/create")}
+            className="rounded-full bg-[#0a3570] px-5 py-2 text-sm font-semibold text-white shadow-[0_10px_24px_rgba(10,27,63,0.2)] transition hover:-translate-y-0.5 hover:bg-[#0a2d5c]"
+          >
+            Create Carpool
+          </button>
         </div>
-        <button
-          type="button"
-          onClick={() => router.push("/carpool/create")}
-          className="rounded-xl px-4 py-2 font-medium border border-neutral-200 bg-white hover:bg-neutral-50"
-        >
-          Create Carpool
-        </button>
-      </div>
 
       {/* Filters */}
-      <div className="mb-6 p-4 rounded-xl border border-neutral-200 bg-neutral-50">
+      <div className="mb-6 rounded-2xl border border-[#1e3a5f] bg-[#f7efe7] p-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="grid gap-1">
             <label className="text-sm font-medium">Filter by Destination</label>
@@ -80,7 +81,7 @@ export default function CarpoolFeedPage() {
               value={destinationFilter}
               onChange={(e) => setDestinationFilter(e.target.value)}
               placeholder="e.g., Boston Airport"
-              className="rounded-xl border p-2 bg-white"
+              className="rounded-xl border border-[#1e3a5f] bg-[#fdf9f3] p-2 text-[#1e3a5f] placeholder:text-[#7b6b5b] focus:outline-none focus:ring-2 focus:ring-[#1e3a5f]/40"
             />
           </div>
           <div className="grid gap-1">
@@ -90,7 +91,7 @@ export default function CarpoolFeedPage() {
               value={dateFilter}
               min={today}
               onChange={(e) => setDateFilter(e.target.value)}
-              className="rounded-xl border p-2 bg-white"
+              className="rounded-xl border border-[#1e3a5f] bg-[#fdf9f3] p-2 text-[#1e3a5f] focus:outline-none focus:ring-2 focus:ring-[#1e3a5f]/40"
             />
           </div>
         </div>
@@ -101,7 +102,7 @@ export default function CarpoolFeedPage() {
               setDestinationFilter("");
               setDateFilter("");
             }}
-            className="mt-3 text-sm text-neutral-600 hover:text-neutral-900"
+            className="mt-3 rounded-full border border-[#1e3a5f] px-4 py-1 text-sm font-medium text-[#1e3a5f] transition hover:bg-[#efe3d2]"
           >
             Clear filters
           </button>
@@ -110,7 +111,7 @@ export default function CarpoolFeedPage() {
 
       {/* Loading state */}
       {loading && (
-        <div className="text-center py-12 text-neutral-600">
+        <div className="text-center py-12 text-[#6b5f52]">
           Loading carpools...
         </div>
       )}
@@ -122,7 +123,7 @@ export default function CarpoolFeedPage() {
           <button
             type="button"
             onClick={fetchCarpools}
-            className="rounded-xl px-4 py-2 border border-neutral-200 hover:bg-neutral-50"
+            className="rounded-full border border-[#1e3a5f] px-5 py-2 text-sm font-medium text-[#1e3a5f] transition hover:bg-[#efe3d2]"
           >
             Try again
           </button>
@@ -132,7 +133,7 @@ export default function CarpoolFeedPage() {
       {/* Empty state */}
       {!loading && !error && carpools.length === 0 && (
         <div className="text-center py-12">
-          <p className="text-neutral-600 mb-4">
+          <p className="mb-4 text-[#6b5f52]">
             {destinationFilter || dateFilter
               ? "No carpools match your filters."
               : "No carpools available yet. Be the first to create one!"}
@@ -140,7 +141,7 @@ export default function CarpoolFeedPage() {
           <button
             type="button"
             onClick={() => router.push("/carpool/create")}
-            className="rounded-xl px-4 py-2 border border-neutral-200 bg-white hover:bg-neutral-50"
+            className="rounded-full bg-[#0a3570] px-5 py-2 text-sm font-semibold text-white shadow-[0_10px_24px_rgba(10,27,63,0.2)] transition hover:-translate-y-0.5 hover:bg-[#0a2d5c]"
           >
             Create Carpool
           </button>
@@ -155,7 +156,7 @@ export default function CarpoolFeedPage() {
           ))}
         </div>
       )}
+      </div>
     </main>
   );
 }
-

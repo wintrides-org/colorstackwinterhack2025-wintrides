@@ -89,7 +89,7 @@ export function estimateWaitMinutes(partySize: number) {
 export function estimatePriceRange(partySize: number) {
   const base = 7;
   const perRider = 2;
-  const min = base + (partySize - 1) * perRider;
+  const min = base + (Math.floor(partySize/4) - 1) * perRider;
   const max = min + 4;
   return { min, max };
 }

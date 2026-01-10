@@ -145,7 +145,7 @@ export default function DashboardPage() {
             <h1
               className={`${displayFont.className} text-3xl sm:text-4xl`}
             >
-              Welcome, Chioma
+              Welcome, Chioma👋🏽
             </h1>
             <p className="mt-1 text-sm text-[#6b5f52]">
               Ready for your next ride?
@@ -289,19 +289,9 @@ export default function DashboardPage() {
             <RequestButton
               label="Request a Ride"
               unstyled
-              className="w-full rounded-none bg-[#0a3570] px-5 py-3 text-base font-semibold text-white hover:bg-[#0a2d5c]"
+              className="w-full rounded-none bg-[#0a3570] px-5 py-3 text-base font-semibold text-white shadow-[0_8px_20px_rgba(10,27,63,0.18)] transition hover:-translate-y-0.5 hover:bg-[#0a2d5c] hover:shadow-[0_14px_28px_rgba(10,27,63,0.25)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0a3570] focus-visible:ring-offset-2"
             />
             <div className="flex flex-col gap-4 md:flex-row md:items-center">
-              <svg
-                viewBox="0 0 120 60"
-                className="h-10 w-24 text-[#0a1b3f]"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="3"
-              >
-                <path d="M2 30c12-16 24-16 36 0s24 16 36 0 24-16 36 0" />
-                <path d="M92 16l22 14-22 14" />
-              </svg>
               <div className="flex-1 rounded-2xl border-2 border-[#0a3570] bg-[#f8efe3] p-5">
                 <p className="text-lg font-semibold">
                   Wanna split a ride with a friend?
@@ -330,21 +320,11 @@ export default function DashboardPage() {
           <div className="grid gap-6 md:grid-cols-[220px_auto] md:items-center">
             <Link
               href="/register"
-              className="w-full rounded-none bg-[#0a3570] px-5 py-3 text-center text-base font-semibold text-white hover:bg-[#0a2d5c]"
+              className="w-full rounded-none bg-[#0a3570] px-5 py-3 text-center text-base font-semibold text-white shadow-[0_8px_20px_rgba(10,27,63,0.18)] transition hover:-translate-y-0.5 hover:bg-[#0a2d5c] hover:shadow-[0_14px_28px_rgba(10,27,63,0.25)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0a3570] focus-visible:ring-offset-2"
             >
               Offer a Ride
             </Link>
             <div className="flex flex-col gap-4 md:flex-row md:items-center">
-              <svg
-                viewBox="0 0 120 60"
-                className="h-10 w-24 text-[#0a1b3f]"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="3"
-              >
-                <path d="M2 30c12-16 24-16 36 0s24 16 36 0 24-16 36 0" />
-                <path d="M92 16l22 14-22 14" />
-              </svg>
               <div className="flex-1 rounded-2xl border-2 border-[#0a3570] bg-[#f8efe3] p-5">
                 <p className="text-lg font-semibold">
                   Have extra seats? Offer a ride today!
