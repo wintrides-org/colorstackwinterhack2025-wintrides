@@ -16,6 +16,7 @@ enum RequestStatus {
   DRAFT
   OPEN
   MATCHED
+  COMPLETED
   CANCELED
   EXPIRED
 }
