@@ -335,10 +335,10 @@ export default function DashboardPage() {
                 <div className="mt-4 flex flex-wrap gap-3">
                   {/* Driver tools placeholder */}
                   <Link
-                    href="/in-progress"
+                    href="/driver/dashboard"
                     className="rounded-full border border-[#0a3570] bg-[#e9dcc9] px-5 py-2 text-sm font-semibold text-[#0a1b3f] hover:bg-[#dbc8ad]"
                   >
-                    My driver dashboard
+                    Take me to driver dashboard
                   </Link>
                   {/* Driver onboarding placeholder */}
                   <Link

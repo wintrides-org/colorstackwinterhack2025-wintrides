@@ -34,6 +34,7 @@ export type Location = {
 export interface RideRequest { 
     id: string;
     riderId: string;
+    acceptedDriverId?: string;
 
     // Request lifecycle metadata.
     type: RequestType;
@@ -50,6 +51,7 @@ export interface RideRequest {
     // Defaults to 1 for immediate/scheduled requests.
     carsNeeded: number;
 
+    matchedAt?: string;
     createdAt: string;
 }
   
