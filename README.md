@@ -1,10 +1,12 @@
-### WintRides is a centralized platform that provides reliable, accessible and affordable rides for college students in rural and surburban campuses. It improves mobility for students on these campuses by providing a smooth way to request, offer and share rides around rural college towns and to key locations like airports.
+__WintRides__ is a centralized platform that provides reliable, accessible and affordable rides for college students in rural and surburban campuses. It improves mobility for students on these campuses by providing a smooth way to request, offer and share rides around rural college towns and to key locations like airports.
 
-### Addressing the Problem of Mobility with WintRides
+*To-do: passive vs active*
+### Addressing the Problem of Mobility with WintRides 
 Requesting rides from fellow students is not a novel culture on college campuses in rural and suburban areas, as many rural campuses have little accessibility to traditional ride-sharing platforms like Uber and Lyft. However, the process usually involves asking for help on multiple messaging platforms or asking friends using direct word-of-mouth, making the hustle for rides a connection game. 
 By providing a centralized platform where students can request, offer, and share rides, WintRides eliminate the hassle associated with ridesharing and increases mobility on and off campus for students in rural and suburban college campuses. 
 
 **WintRides Services**
+
 WintRides offers 3 major services:
 1) Request Service: Allows students to find a driver either for immediate and scheduled appointments or group events
 2) Offer Service: Allows students to pick up ride appointments, enabling them to offer rides to other students and get paid
@@ -18,9 +20,9 @@ To use the platform, a user takes the following steps
   - Enter your username and password to sign in
 
 ## Request a Ride
-  - Click on the "Request a Ride" button on the homepage/dashboare
+  - Click on the "Request a Ride" button on the homepage/dashboard
   - Choose a request type from the inline modal that pops up 
-  - Complete the assoicated form
+  - Complete the associated form
   - Review the quote and submit
   - Go back to your dashboard: there should be a card "Your Rides" with the confirmation details
 
@@ -31,16 +33,13 @@ To use the platform, a user takes the following steps
   ***Note that for the purposes of this demo, you are able to accept a ride you requested. We implemented this permission to allow the judges view the implementation end-to-end.***
   - To accept a ride, click "Accept"
   - Refresh the page and you'll see the details of your accepted ride in the "Upcoming Requests" card on your driver dashbaord
-  - Click View --> Then Click Navigate to navigate to the pickup
+  - Click View --> Then Click Navigate to navigate to the pickup location
   - Click on the "Complete" button when the ride is completed
-  ***Note that the Complete logic for v2 is that we use GPS to track if the rider and driver actually got to the destination. We allow the driver to mark the ride as completed for the hackathon.
+  ***Note that the Complete logic for v2 is that we use GPS to track if the rider and driver actually got to the destination. We allow the driver to mark the ride as completed for the hackathon.***
 
 
-Here are instructions to set-up: 
+Here are instructions to set-up and test code on local machine: 
 ### SET-UP AND INSTALLATION 
-
-**Technologies used:**
-- Cursor, Codex/ChatGPT, Vercel, PostegreSQL, VSCode (primary IDE), Prisma, Git (for version control)
 
 **Tech Stack**
 
@@ -51,6 +50,13 @@ Here are instructions to set-up:
 - PostgreSQL
 - Tailwind CSS
 - bcrypt (password hashing)
+
+**Other Technologies used:**
+
+- AI integrations: Cursor, Codex/ChatGPT
+- Git (for version control)
+- VSCode (primary IDE)
+- Vercel (app deployment platform)
 
 **Prerequisites**
 
@@ -115,13 +121,12 @@ Open http://localhost:3000.
 npx prisma migrate deploy or 
 npx prisma migrate dev).
 - Node.js version too old (use v20+).
-- Email must be a .edu domain for registration.
 
 **Optional: Deploy on Vercel**
 
 The easiest way to deploy this app is to use the [Vercel Platform] from the creators of Next.js.
 
-### Flow Diagrams
+### Additional Notes 
 
 **Backend diagram (PostgreSQL + Prisma)**
 
