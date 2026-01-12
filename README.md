@@ -23,14 +23,14 @@
 
 1) Clone the repo
 
-`ash
+`
 git clone <your-repo-url>
 cd WintRides
 `
 
 2) Install dependencies
 
-`ash
+`
 npm install
 `
 
@@ -38,19 +38,19 @@ npm install
 
 Create a .env file in the project root with:
 
-`ash
+`
 DATABASE_URL="postgresql://USER:PASSWORD@HOST:PORT/DB_NAME"
 `
 
 4) Set up the database
 
-`ash
+`
 npx prisma migrate deploy
 `
 
 For local development you can use:
 
-`ash
+`
 npx prisma migrate dev
 `
 
@@ -60,7 +60,7 @@ There is no Prisma seed script configured yet. If you need sample data, add a se
 
 6) Start the app locally
 
-`ash
+`
 npm run dev
 `
 
@@ -79,26 +79,6 @@ npx prisma migrate deploy or
 npx prisma migrate dev).
 - Node.js version too old (use 20+).
 - Email must be a .edu domain for registration.
-
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
 ## Backend diagram (PostgreSQL + Prisma)
 
@@ -135,7 +115,7 @@ Response: created request record
 
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform] from the creators of Next.js.
+The easiest way to deploy this app is to use the [Vercel Platform] from the creators of Next.js.
 
 
 
