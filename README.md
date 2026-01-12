@@ -1,6 +1,23 @@
+## Table of contents
+- [Usage Instructions](#usage-instructions)
+  - [Create an Account/Sign-in flow](#create-an-accountsign-in-flow)
+  - [Request a Ride](#request-a-ride)
+  - [Offer a Ride](#offer-a-ride)
+- [SET-UP AND INSTALLATION](#set-up-and-installation)
+  - [Technologies used](#technologies-used)
+  - [Tech Stack](#tech-stack)
+  - [Prerequisites](#prerequisites)
+  - [Installation & Setup](#installation--setup)
+  - [Auth flow note](#auth-flow-note)
+  - [Common issues](#common-issues)
+  - [Optional: Deploy on Vercel](#optional-deploy-on-vercel)
+- [Flow Diagrams](#flow-diagrams)
+  - [Backend diagram (PostgreSQL + Prisma)](#backend-diagram-postgresql--prisma)
+- [Pages Directory Structure](#pages-directory-structure)
+
+
 __WintRides__ is a centralized platform that provides reliable, accessible and affordable rides for college students in rural and surburban campuses. It improves mobility for students on these campuses by providing a smooth way to request, offer and share rides around rural college towns and to key locations like airports.
 
-*To-do: passive vs active*
 ### Addressing the Problem of Mobility with WintRides 
 Requesting rides from fellow students is not a novel culture on college campuses in rural and suburban areas, as many rural campuses have little accessibility to traditional ride-sharing platforms like Uber and Lyft. However, the process usually involves asking for help on multiple messaging platforms or asking friends using direct word-of-mouth, making the hustle for rides a connection game. 
 By providing a centralized platform where students can request, offer, and share rides, WintRides eliminate the hassle associated with ridesharing and increases mobility on and off campus for students in rural and suburban college campuses. 
