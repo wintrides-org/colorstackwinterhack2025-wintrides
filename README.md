@@ -5,10 +5,10 @@
 - Next.js (App Router)
 - React
 - TypeScript
-- Prisma ORM + @prisma/adapter-pg
+- Prisma ORM + @prisma/adapter-pg (hosts database)
 - PostgreSQL
 - Tailwind CSS
-- bcrypt
+- bcrypt (password hashing)
 
 ### Technologies used: 
 - Cursor, Codex/ChatGPT, Vercel, PostegreSQL, VSCode (primary IDE), Prima, Git (for version control)
@@ -23,14 +23,14 @@
 
 1) Clone the repo
 
-`ash
+`
 git clone <your-repo-url>
 cd WintRides
 `
 
 2) Install dependencies
 
-`ash
+`
 npm install
 `
 
@@ -38,19 +38,19 @@ npm install
 
 Create a .env file in the project root with:
 
-`ash
+`
 DATABASE_URL="postgresql://USER:PASSWORD@HOST:PORT/DB_NAME"
 `
 
 4) Set up the database
 
-`ash
+`
 npx prisma migrate deploy
 `
 
 For local development you can use:
 
-`ash
+`
 npx prisma migrate dev
 `
 
@@ -60,7 +60,7 @@ There is no Prisma seed script configured yet. If you need sample data, add a se
 
 6) Start the app locally
 
-`ash
+`
 npm run dev
 `
 
@@ -135,7 +135,7 @@ Response: created request record
 
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform] from the creators of Next.js.
+The easiest way to deploy this app is to use the [Vercel Platform] from the creators of Next.js.
 
 
 
