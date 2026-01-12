@@ -18,7 +18,7 @@ WintRides is a centralized platform that provides reliable, accessible and affor
 
 **Prerequisites**
 
-- Node.js 20+
+- Node.js v20+
 - npm
 - PostgreSQL database
 
@@ -78,7 +78,7 @@ Open http://localhost:3000.
 - Migrations not applied (run 
 npx prisma migrate deploy or 
 npx prisma migrate dev).
-- Node.js version too old (use 20+).
+- Node.js version too old (use v20+).
 - Email must be a .edu domain for registration.
 
 **Optional: Deploy on Vercel**
