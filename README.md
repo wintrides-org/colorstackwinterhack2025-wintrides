@@ -1,4 +1,6 @@
 ## Table of contents
+- [Project Description](#project-description)
+  - [Addressing Mobility](#wintrides-services)
 - [Usage Instructions](#usage-instructions)
   - [Create an Account/Sign-in flow](#create-an-accountsign-in-flow)
   - [Request a Ride](#request-a-ride)
@@ -16,9 +18,10 @@
 - [Pages Directory Structure](#pages-directory-structure)
 
 
+### Project Description
 __WintRides__ is a centralized platform that provides reliable, accessible and affordable rides for college students in rural and surburban campuses. It improves mobility for students on these campuses by providing a smooth way to request, offer and share rides around rural college towns and to key locations like airports.
 
-### Addressing the Problem of Mobility with WintRides 
+## Addressing the Problem of Mobility with WintRides##
 Requesting rides from fellow students is not a novel culture on college campuses in rural and suburban areas, as many rural campuses have little accessibility to traditional ride-sharing platforms like Uber and Lyft. However, the process usually involves asking for help on multiple messaging platforms or asking friends using direct word-of-mouth, making the hustle for rides a connection game. 
 By providing a centralized platform where students can request, offer, and share rides, WintRides eliminate the hassle associated with ridesharing and increases mobility on and off campus for students in rural and suburban college campuses. 
 
@@ -47,12 +50,14 @@ To use the platform, a user takes the following steps
   - If you have not signed up to become a driver, click on the "Become a Driver" button
   - Click on the "Offer a Ride" or "Take me to Driver Dashboard" button
   - When on the driver dashboard, you'll see new ride requests in the "New Ride Requests" card. Click on "View All" to view all requests
-  ***Note that for the purposes of this demo, you are able to accept a ride you requested. We implemented this permission to allow the judges view the implementation end-to-end.***
+
+  *Note that for the purposes of this demo, you are able to accept a ride you requested. We implemented this permission to allow the judges view the implementation end-to-end.*
   - To accept a ride, click "Accept"
   - Refresh the page and you'll see the details of your accepted ride in the "Upcoming Requests" card on your driver dashbaord
   - Click View --> Then Click Navigate to navigate to the pickup location
   - Click on the "Complete" button when the ride is completed
-  ***Note that the Complete logic for v2 is that we use GPS to track if the rider and driver actually got to the destination. We allow the driver to mark the ride as completed for the hackathon.***
+
+  *Note that the Complete logic for v2 is that we use GPS to track if the rider and driver actually got to the destination. We allow the driver to mark the ride as completed for the MVP used for the hackathon.*
 
 
 Here are instructions to set-up and test code on local machine: 
