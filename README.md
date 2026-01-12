@@ -1,41 +1,12 @@
-### WintRides is a centralized platform that provides reliable, accessible and affordable rides for college students around college towns and to key locations like airports
+### PROJECT DESCRIPTION
+WintRides is a centralized platform that provides reliable, accessible and affordable rides for college students around college towns and to key locations like airports
 
-### Addressing the Problem of Mobility with WintRides
-Requesting rides from fellow students is not a novel culture on college campuses in rural and suburban areas, as many rural campuses have little accessibility to traditional ride-sharing platforms like Uber and Lyft. However, the process usually involves asking for help on multiple messaging platforms or asking friends using direct word-of-mouth, making the hustle for rides a connection game. 
-By providing a centralized platform wehre students can request, offer, and share rides, WintRides eliminate the hassle associated with ridesharing and increases mobility on and off campus for students in rural and suburban college campuses. 
+### SET-UP AND INSTALLATION 
 
-### WintRides Services
-WintRides offers 3 major services:
-1) Request Service: Allows students to find a driver either for immediate and scheduled appointments or group events
-2) Offer Service: Allows students to pick up ride appointments, enabling them to offer rides to other students and get paid
-3) Share Service: Allows students find other students to ride with, promoting trust and affordability
+**Technologies used:**
+- Cursor, Codex/ChatGPT, Vercel, PostegreSQL, VSCode (primary IDE), Prisma, Git (for version control)
 
-### Usage Instructions
-To use the platform, a user takes the following steps
-## Create an Account/Sign-in flow
-  - Click on the production link: {insert link}
-  - Complete the instructions to create an account or skip to sign in if account has been created already. If interested in becoming a driver, indicate that during account creation
-  - Enter your username and password to sign in
-
-## Request a Ride
-  - Click on the "Request a Ride" button on the homepage/dashboare
-  - Choose a request type from the inline modal that pops up 
-  - Complete the assoicated form
-  - Review the quote and submit
-  - Go back to your dashboard: there should be a card "Your Rides" with the confirmation details
-
-## Offer a Ride
-  - If you have not signed up to become a driver, click on the "Become a Driver" button
-  - Click on the "Offer a Ride" or "Take me to Driver Dashboard" button
-  - When on the driver dashboard, you'll see new ride requests in the "New Ride Requests" card. Click on "View All" to view all requests
-  ***Note that for the purposes of this demo, you are able to accept a ride you requested. We implemented this permission to allow the judges view the implementation end-to-end.***
-  - To accept a ride, click "Accept"
-  - Refresh the page and you'll see the details of your accepted ride in the "Upcoming Requests" card on your driver dashbaord
-  - Click View --> Then Click Navigate to navigate to the pickup
-  - Click on the "Complete" button when the ride is completed
-  ***Note that the Complete logic for v2 is that we use GPS to track if the rider and driver actually got to the destination. We allow the driver to mark the ride as completed for the hackathon.
-
-## Tech Stack
+**Tech Stack**
 
 - Next.js (App Router)
 - React
@@ -45,21 +16,18 @@ To use the platform, a user takes the following steps
 - Tailwind CSS
 - bcrypt (password hashing)
 
-### Technologies used: 
-- Cursor, Codex/ChatGPT, Vercel, PostegreSQL, VSCode (primary IDE), Prima, Git (for version control)
-
-## Prerequisites
+**Prerequisites**
 
 - Node.js 20+
 - npm
 - PostgreSQL database
 
-## Installation & Setup
+**Installation & Setup**
 
 1) Clone the repo
 
 `
-git clone <your-repo-url>
+git clone <https://github.com/wintrides-org/WintRides.git>
 cd WintRides
 `
 
@@ -71,11 +39,9 @@ npm install
 
 3) Configure environment variables
 
-Create a .env file in the project root with:
-
 `
-DATABASE_URL="postgresql://USER:PASSWORD@HOST:PORT/DB_NAME"
-`
+cp .sample.env .env
+` 
 
 4) Set up the database
 
@@ -101,21 +67,27 @@ npm run dev
 
 Open http://localhost:3000.
 
-## Auth flow note
+**Auth flow note**
 
 - Registration logs an email verification link in the dev server console and returns a verification token in the API response.
 - Sign-in requires a verified .edu email
 
-## Common issues
+**Common issues**
 
-- DATABASE_URL missing or invalid.
+- DATABASE_URL missing or invalid (check that your .env file exists and is up-to-date)
 - Migrations not applied (run 
 npx prisma migrate deploy or 
 npx prisma migrate dev).
 - Node.js version too old (use 20+).
 - Email must be a .edu domain for registration.
 
-## Backend diagram (PostgreSQL + Prisma)
+**Optional: Deploy on Vercel**
+
+The easiest way to deploy this app is to use the [Vercel Platform] from the creators of Next.js.
+
+### Flow Diagrams
+
+**Backend diagram (PostgreSQL + Prisma)**
 
 ```
 Browser UI (RequestForm)
@@ -146,11 +118,4 @@ PostgreSQL
   v
 Response: created request record
 ```
-
-
-## Deploy on Vercel
-
-The easiest way to deploy this app is to use the [Vercel Platform] from the creators of Next.js.
-
-
 
