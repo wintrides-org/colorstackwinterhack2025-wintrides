@@ -241,7 +241,13 @@ Response: created request record
 ### The WintRides Team
 
 - **Chioma Opara**
-- **Olohi John**: 
+Chioma led the backend development of the WintRides platform, focusing on system architecture and core application logic. She implemented the data models, APIs, and request-handling flows that power ride creation, matching, and role management. She also worked on authentication, user verification logic, and integrations required for secure operations. Her work ensured the platform was scalable, reliable, and capable of supporting end-to-end ride coordination.
 
+- **Olohi John**
+Olohi led the frontend development of the WintRides platform, focusing on translating product requirements into a clear, intuitive user interface. She designed and implemented key user flows, including ride requests, role-based views, and core navigation components. She also worked on UI/UX decisions to improve usability, accessibility, and overall visual consistency across the platform. Her work ensured that complex backend logic was surfaced to users in a simple, understandable way.
+
+## View Final Product 
+- **Project presentation slides:** https://www.canva.com/design/DAG-QcG0678/EiSKxXHAPYMA5rQ6P909OQ/view?utm_content=DAG-QcG0678&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h4ff236529f
+- **Project demo vide:** https://youtube.com/shorts/ORM8TcAcBlI?si=crlZ_PiUscZ1F-6V
 
 
