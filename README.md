@@ -105,7 +105,7 @@ Here are instructions to set-up and test code on local machine:
 
 1) Clone the repo
 
-`ash
+`bash
 git clone https://github.com/wintrides-org/WintRides.git
 cd WintRides
 `
@@ -118,20 +118,21 @@ cd WintRides
 2) Close and reopen PowerShell/Terminal.
 3) Verify:
 
-`ash
+`bash
 node -v
 npm -v
 `
 
 **B. *Configure environment variables***
 
-`ash
+`bash
 cp .sample.env .env
 `
 
+
 **C. *Install other relevant dependencies***
 
-`ash
+`bash
 npm install
 `
 
@@ -139,19 +140,19 @@ npm install
 
 For local development you can use:
 
-`ash
+`bash
 npx prisma migrate dev
 `
 
 Else, do: 
 
-`ash
+`bash
 npx prisma migrate deploy
 `
 
 6) Start the app locally (optional: can deploy on vercel)
 
-`ash
+`bash
 npm run dev
 `
 
