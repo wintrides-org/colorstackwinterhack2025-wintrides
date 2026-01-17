@@ -2,7 +2,7 @@
  * Dashboard Page
  * 
  * Main app page shown after user signs up or signs in.
- * Contains navigation to request rides, view carpools, and access driver tools.
+ * Contains navigation to request rides, carpool flows, and driver's dashboard (or form to become a driver)
  * 
  * AUTHENTICATION PROTECTION:
  * - This page requires user to be authenticated (signed in)
@@ -15,7 +15,7 @@
  *   - Client-side session check on page load
  *   - Basic redirect if not authenticated
  * 
- * Production:
+ * Production (To do):
  *   - Use Next.js middleware for route protection (more secure)
  *   - Server-side session validation
  *   - Add loading states during authentication check
@@ -24,7 +24,8 @@
 
 "use client";
 
-// Dashboard is a client component because it checks auth state on the client
+// Dashboard is a client component because it checks auth state on the client (browser)
+// This means it shows the page before it checks if the user is logged in for that session
 // and uses local UI state (alerts, menus).
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
@@ -32,6 +33,7 @@ import RequestButton from "@/components/requestbutton";
 import Link from "next/link";
 import { Playfair_Display, Work_Sans } from "next/font/google";
 
+// set up the display and body font for consistency through the page
 const displayFont = Playfair_Display({
   subsets: ["latin"],
   weight: ["600", "700"],
@@ -55,13 +57,16 @@ export default function DashboardPage() {
     []
   );
   
-  // State to track authentication check
-  // null = checking, true = authenticated, false = not authenticated
+  // State to track authentication check:
+  // null = checking, true = authenticated, false = not authenticated.
   const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
+  // Whether the signed-in user has driver privileges.
   const [isDriver, setIsDriver] = useState<boolean | null>(null);
+  // Controls the "Loading..." UI while auth is being verified.
   const [isLoading, setIsLoading] = useState(true);
   // Controls whether the alert list is expanded.
   const [alertsOpen, setAlertsOpen] = useState(true);
+  // Last ride request shown in the dashboard (stored client-side for MVP).
   const [lastRide, setLastRide] = useState<{
     pickupLabel: string;
     dropoffLabel: string;
@@ -69,7 +74,9 @@ export default function DashboardPage() {
     partySize: number;
     type: string;
   } | null>(null);
+  // Controls the modal that tells drivers they already have access.
   const [showDriverModal, setShowDriverModal] = useState(false);
+  // Tracks the delayed redirect so it can be canceled on unmount.
   const redirectTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   /**
@@ -102,12 +109,12 @@ export default function DashboardPage() {
         });
 
         if (res.ok) {
-          // Valid session: allow dashboard render.
+          // Valid session: allow dashboard render and capture driver role.
           const data = await res.json().catch(() => null);
           setIsAuthenticated(true);
           setIsDriver(Boolean(data?.user?.isDriver));
         } else {
-          // Invalid session: clear token and bounce to sign-in.
+          // Invalid session: clear token and redirect to sign-in.
           setIsAuthenticated(false);
           setIsDriver(null);
           
@@ -123,6 +130,7 @@ export default function DashboardPage() {
         localStorage.removeItem("sessionToken");
         router.push("/signin");
       } finally {
+        // Always end the loading state after the check finishes.
         setIsLoading(false);
       }
     }
@@ -141,6 +149,7 @@ export default function DashboardPage() {
 
   useEffect(() => {
     try {
+      // MVP: "last ride" data is stored in localStorage by the request flow.
       const stored = localStorage.getItem("lastRideRequest");
       if (stored) {
         setLastRide(JSON.parse(stored));
@@ -165,9 +174,10 @@ export default function DashboardPage() {
 
   // If unauthenticated, do not render anything (redirect in progress).
   if (!isAuthenticated) {
-    return null; // Don't render anything while redirecting
+    return null; // Avoid flashing the dashboard before redirect.
   }
 
+  // Route drivers straight to their dashboard; others go to enable flow.
   const handleDriverDashboardClick = () => {
     if (isDriver) {
       router.push("/driver/dashboard");
@@ -177,6 +187,7 @@ export default function DashboardPage() {
     router.push("/driver/enable");
   };
 
+  // Show a brief modal for existing drivers, then redirect them.
   const handleBecomeDriverClick = () => {
     if (!isDriver) {
       router.push("/driver/enable");
