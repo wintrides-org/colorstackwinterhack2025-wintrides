@@ -35,7 +35,7 @@ WintRides offers 3 major services:
 ### Usage Instructions
 To use the platform, a user takes the following steps
 ## Create an Account/Sign-in flow
-  - Click on the production link: https://wint-rides.vercel.app/
+  - Click on the production link: https://wint-rides-blond.vercel.app/ (app works best in light mode)
   - Complete the instructions to create an account or skip to sign in if account has been created already. If interested in becoming a driver, indicate that during account creation
   - Enter your username and password to sign in
   - You'll be taken to the dashboard
@@ -97,59 +97,79 @@ Here are instructions to set-up and test code on local machine:
 
 **Prerequisites**
 
-- Node.js v20+
-- npm
+- Git
+- Node.js v20+ (includes npm)
 - PostgreSQL database
 
 **Installation & Setup**
 
 1) Clone the repo
 
-`
-git clone <https://github.com/wintrides-org/WintRides.git>
+`bash
+git clone https://github.com/wintrides-org/WintRides.git
 cd WintRides
 `
 
 2) Install dependencies
 
+**A. *Install Node.js (Windows/mac)***
+
+1) Run the Node.js LTS installer appropriate to your machine from https://nodejs.org.
+2) Close and reopen PowerShell/Terminal.
+3) Verify:
+
+`bash
+node -v
+npm -v
 `
+
+**B. *Configure environment variables***
+
+`bash
+cp .sample.env .env
+`
+
+
+**C. *Install other relevant dependencies***
+
+`bash
 npm install
 `
 
-3) Configure environment variables
-
-`
-cp .sample.env .env
-` 
-
 4) Set up the database
-
-`
-npx prisma migrate deploy
-`
 
 For local development you can use:
 
-`
+`bash
 npx prisma migrate dev
 `
 
-5) Seed the database***************
+Else, do: 
 
-There is no Prisma seed script configured yet. If you need sample data, add a seed script or use the app flows to create data.
-
-6) Start the app locally
-
+`bash
+npx prisma migrate deploy
 `
+
+6) Start the app locally (optional: can deploy on vercel)
+
+`bash
 npm run dev
 `
 
 Open http://localhost:3000.
 
-**Auth flow note**
 
-- Registration logs an email verification link in the dev server console and returns a verification token in the API response.
-- Sign-in requires a verified .edu email
+7) Create sample data in the database
+
+Use the app flows to create data. Instructions to navigate through the app can be found in the **Usage instructions** section 
+
+**Authentication flow note**
+
+- Email verification is currently **simulated** for development and testing.
+- Upon registration (sign-up), a verification link is logged in the dev server console, and a verification token is returned in the API response.
+- A user is considered “verified” if their email ends with **`.edu`**. The system does **not** yet verify that the email address actually exists.
+- Future versions of this app will implement real email delivery and stronger verification by sending a verification link to the user’s email and validating it upon click.
+- Note that the current implementation of sign-in is restricted to users with a **verified `.edu` email address**.
 
 **Common issues**
 
@@ -158,10 +178,6 @@ Open http://localhost:3000.
 npx prisma migrate deploy or 
 npx prisma migrate dev).
 - Node.js version too old (use v20+).
-
-**Optional: Deploy on Vercel**
-
-The easiest way to deploy this app is to use the [Vercel Platform] from the creators of Next.js.
 
 ### Additional Notes 
 
@@ -197,7 +213,7 @@ PostgreSQL
 Response: created request record
 ```
 
-### Pages Directory Structure
+**Pages Directory Structure**
 ```
 /
 ├── (landing) /
@@ -222,4 +238,17 @@ Response: created request record
 │   └── /[id]
 └── /in-progress
 ```
+
+### The WintRides Team
+
+- **Chioma Opara**
+Chioma led the backend development of the WintRides platform, focusing on system architecture and core application logic. She implemented the data models, APIs, and request-handling flows that power ride creation, matching, and role management. She also worked on authentication, user verification logic, and integrations required for secure operations. Her work ensured the platform was scalable, reliable, and capable of supporting end-to-end ride coordination.
+
+- **Olohi John**
+Olohi led the frontend development of the WintRides platform, focusing on translating product requirements into a clear, intuitive user interface. She designed and implemented key user flows, including ride requests, role-based views, and core navigation components. She also worked on UI/UX decisions to improve usability, accessibility, and overall visual consistency across the platform. Her work ensured that complex backend logic was surfaced to users in a simple, understandable way.
+
+## View Final Product 
+- **Project presentation slides:** https://www.canva.com/design/DAG-QcG0678/EiSKxXHAPYMA5rQ6P909OQ/view?utm_content=DAG-QcG0678&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h4ff236529f
+- **Project demo vide:** https://youtube.com/shorts/ORM8TcAcBlI?si=crlZ_PiUscZ1F-6V
+
 
